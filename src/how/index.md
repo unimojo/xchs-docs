@@ -10,4 +10,4 @@
 - Only Mint and Transfer will change the balance, while Deploy will not.
 - The user who exceeds the maximum value at the first Mint can get the remaining amount. Any Mint that exceeds the maximum value afterwards will be invalid.
 - XCHS can be completely independent of XCH, that is, an account may not have any XCH but have a balance of XCHS. Furthermore, in wallets that support gasless, you can directly pay gas with XCHS to complete transactions.
-- The maximum supply should not exceed the maximum value of UInt64. (= 18446744073709551615)
+- The maximum supply should not exceed the maximum value: 9007199254740991
