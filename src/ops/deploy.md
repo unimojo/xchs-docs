@@ -6,7 +6,7 @@ In our documentation, we've chosen to use $PAWS as our example token. This is pu
 {
   'p': 'xchs',
   'op': 'deploy',
-  'tick': 'paws',
+  'tick': 'xchs',
   'max': '21000000',
   'lim': '1000'
 }
