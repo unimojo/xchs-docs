@@ -1,6 +1,6 @@
 # Deploy
 
-In our documentation, we've chosen to use $PAWS as our example token. This is purely for demonstration purposes. However, the principles apply just the same to your chosen token. Just replace $PAWS with your token's name and you're good to go!
+In our documentation, we've chosen to use $XCHS as our example token. This is purely for demonstration purposes. However, the principles apply just the same to your chosen token. Just replace $XCHS with your token's name and you're good to go!
 
 ```js
 {
