@@ -3,7 +3,7 @@ authors = ["icerdesign"]
 language = "en"
 multilingual = false
 src = "src"
-title = "Chidinals White Paper"
+title = "XCHS White Paper"
 
 [preprocessor]
 
