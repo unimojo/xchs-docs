@@ -14,4 +14,3 @@
 --------------
 
 - [About Us](./misc/about.md)
-- [Back Cover](./misc/back.md)
