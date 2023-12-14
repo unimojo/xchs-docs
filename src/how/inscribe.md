@@ -11,7 +11,7 @@
 - Choose an appropriate Network Fee. The Chia network supports zero-fee transactions, so you can choose not to fill this in, but doing so may cause longer transaction times. In case the network isn't congested, choosing a low/medium fee should suffice.
 
 - After signing in, Pawket will automatically calculate the cost of this inscription (including service fees paid to the wallet and network fees paid to the miners). Pawket charges a service fee of 0.0005 XCH for every inscription. Additionally, 1 mojo will be temporarily consumed as a cargo coin during the inscription process, but will return to your wallet afterwards, hence it does not count as part of the total cost.
-  ![image](https://github.com/unimojo/xchs-docs/assets/80501701/94b7b80a-b0c1-4054-963f-f0172ed18470)
+  ![image](https://github.com/unimojo/xchs-docs/assets/80501701/9abb5a45-70cc-42d1-9a32-e89a7644608c)
 
 - After confirming that all the information is correct, submit and wait for confirmation on the blockchain.
 
