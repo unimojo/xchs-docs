@@ -16,4 +16,11 @@
 - After confirming that all the information is correct, submit and wait for confirmation on the blockchain.
 
 ## Use Chia Client to inscribe
-- 
+- Please prepare your Chia client and ensure that you have at least 1 mojo(which is 0.000000000001XCH) in your balance.
+- On the send interface, enter your own address, input any amount of XCH (at least 0.000000000001XCH), as well as the network fee (which can be 0).
+- Click on 'Add transaction memo', and type the following content like this(You can modify the content of 'tick' and 'amt' as needed):
+  -  ` {'p':'xchs','op':'mint','tick':'xchs','amt':'1000'} `
+- After checking all the above information for accuracy, click 'Send' to submit this transaction and wait for block confirmation.
+ ![image](https://github.com/unimojo/xchs-docs/assets/80501701/ae6a5ed5-c970-4b02-87f5-a689dcb0f4ed)
+
+
