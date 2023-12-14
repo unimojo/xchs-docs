@@ -6,7 +6,7 @@ If you're using an inscription service, be cautious. Some tools might inscribe t
 {
   'p': 'xchs',
   'op': 'mint',
-  'tick': 'paws',
+  'tick': 'xchs',
   'amt': '1000'
 }
 ```
