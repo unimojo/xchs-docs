@@ -6,8 +6,6 @@
 
 - [Introduction](./intro.md)
 - [How It Works](./how/index.md)
-    - [Balance](./how/balance.md)
-    - [List](./how/list.md)
 - [Operations](./ops/index.md)
     - [Deploy](./ops/deploy.md)
     - [Mint](./ops/mint.md)
