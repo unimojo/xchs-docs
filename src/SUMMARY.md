@@ -1,9 +1,4 @@
 # Summary
-
-- [Cover](./misc/cover.md)
-
---------------
-
 - [Introduction](./intro.md)
 - [How It Works](./how/index.md)
 - [Operations](./ops/index.md)
