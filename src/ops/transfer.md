@@ -6,7 +6,7 @@ Attention, some wallet implementation generate a different address each time. Ma
 {
   'p': 'xchs',
   'op': 'transfer',
-  'tick': 'paws',
+  'tick': 'xchs',
   'amt': '100'
 }
 ```
