@@ -1,6 +1,7 @@
 # Summary
 - [Introduction](./intro.md)
 - [How It Works](./how/index.md)
+- [How to Inscribe](./how/inscribe.md)
 - [Operations](./ops/index.md)
     - [Deploy](./ops/deploy.md)
     - [Mint](./ops/mint.md)
