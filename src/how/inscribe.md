@@ -5,7 +5,7 @@
 - Click on the 'Inscribe' button at the bottom of the Pawket to enter the inscription page.
   ![image](1.png)
 
-- Enter the Tick and Amount of the token you plan to inscribe(view the [Deployed List](https://unimojo.io/xchs).), such as "xchs" "1000", and fill in the Receiver Address (the default receiver address is the primary address of your wallet).
+- Enter the Tick and Amount of the token you plan to inscribe(view the [Deployed List](https://unimojo.io/#/xchs).), such as "xchs" "1000", and fill in the Receiver Address (the default receiver address is the primary address of your wallet).
   ![image](2.png)
  
 - Choose an appropriate Network Fee. The Chia network supports zero-fee transactions, so you can choose not to fill this in, but doing so may cause longer transaction times. In case the network isn't congested, choosing a low/medium fee should suffice.
