@@ -3,7 +3,7 @@
     <head>
         <!-- Book generated using mdBook -->
         <meta charset="UTF-8">
-        <title>Operations - XCHS White Paper</title>
+        <title>How to Inscribe - XCHS White Paper</title>
         <!-- Custom HTML head -->
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
         <meta name="description" content="">
@@ -75,7 +75,7 @@
 
         <nav id="sidebar" class="sidebar" aria-label="Table of contents">
             <div class="sidebar-scrollbox">
-                <ol class="chapter"><li class="chapter-item expanded "><a href="../intro.html"><strong aria-hidden="true">1.</strong> Introduction</a></li><li class="chapter-item expanded "><a href="../how/index.html"><strong aria-hidden="true">2.</strong> How It Works</a></li><li class="chapter-item expanded "><a href="../how/inscribe.html"><strong aria-hidden="true">3.</strong> How to Inscribe</a></li><li class="chapter-item expanded "><a href="../ops/index.html" class="active"><strong aria-hidden="true">4.</strong> Operations</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../ops/deploy.html"><strong aria-hidden="true">4.1.</strong> Deploy</a></li><li class="chapter-item expanded "><a href="../ops/mint.html"><strong aria-hidden="true">4.2.</strong> Mint</a></li><li class="chapter-item expanded "><a href="../ops/transfer.html"><strong aria-hidden="true">4.3.</strong> Transfer</a></li><li class="spacer"></li></ol></li><li class="chapter-item expanded "><a href="../misc/about.html"><strong aria-hidden="true">5.</strong> About Us</a></li></ol>
+                <ol class="chapter"><li class="chapter-item expanded "><a href="../intro.html"><strong aria-hidden="true">1.</strong> Introduction</a></li><li class="chapter-item expanded "><a href="../how/index.html"><strong aria-hidden="true">2.</strong> How It Works</a></li><li class="chapter-item expanded "><a href="../how/inscribe.html" class="active"><strong aria-hidden="true">3.</strong> How to Inscribe</a></li><li class="chapter-item expanded "><a href="../ops/index.html"><strong aria-hidden="true">4.</strong> Operations</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../ops/deploy.html"><strong aria-hidden="true">4.1.</strong> Deploy</a></li><li class="chapter-item expanded "><a href="../ops/mint.html"><strong aria-hidden="true">4.2.</strong> Mint</a></li><li class="chapter-item expanded "><a href="../ops/transfer.html"><strong aria-hidden="true">4.3.</strong> Transfer</a></li><li class="spacer"></li></ol></li><li class="chapter-item expanded "><a href="../misc/about.html"><strong aria-hidden="true">5.</strong> About Us</a></li></ol>
             </div>
             <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
         </nav>
@@ -134,26 +134,52 @@
 
                 <div id="content" class="content">
                     <main>
-                        <h1 id="protocol"><a class="header" href="#protocol">Protocol</a></h1>
+                        <h1 id="how-to-inscribe"><a class="header" href="#how-to-inscribe">How to inscribe?</a></h1>
+<h2 id="easy-way--use-pawket-to-inscribe"><a class="header" href="#easy-way--use-pawket-to-inscribe">Easy way : Use Pawket to inscribe</a></h2>
 <ul>
-<li>The inscription of XCHS is inscribed in the transfer Memo of regular XCH.</li>
-<li>The supported XCH transfer type is the standard XCH transfer type: <code>p2_delegated_puzzle_or_hidden_puzzle</code></li>
-<li>Due to the limitations of Chialisp, there are slight differences compared to standard JSON: content must use single quotes <code>'</code>, and it is not allowed to have single or double quotes (<code>'</code>, <code>&quot;</code>) within the content.</li>
-<li>The content of XCHS in the Memo includes only simple inscription:
+<li>
+<p>Please prepare your Pawket wallet ( <a href="https://info.pawket.app/download/">Download here</a>) and ensure it contains a balance of at least 0.0005 XCH.</p>
+</li>
+<li>
+<p>Click on the 'Inscribe' button at the bottom of the Pawket to enter the inscription page.
+<img src="1.png" alt="image" /></p>
+</li>
+<li>
+<p>Enter the Tick and Amount of the token you plan to inscribe(view the <a href="https://unimojo.io/xchs">Deployed List</a>.), such as &quot;xchs&quot; &quot;1000&quot;, and fill in the Receiver Address (the default receiver address is the primary address of your wallet).
+<img src="2.png" alt="image" /></p>
+</li>
+<li>
+<p>Choose an appropriate Network Fee. The Chia network supports zero-fee transactions, so you can choose not to fill this in, but doing so may cause longer transaction times. In case the network isn't congested, choosing a low/medium fee should suffice.</p>
+</li>
+<li>
+<p>After signing in, Pawket will automatically calculate the cost of this inscription (including service fees paid to the wallet and network fees paid to the miners). Pawket charges a service fee of 0.0005 XCH for every inscription. Additionally, 1 mojo will be temporarily consumed as a cargo coin during the inscription process, but will return to your wallet afterwards, hence it does not count as part of the total cost.
+<img src="3.png" alt="image" /></p>
+</li>
+<li>
+<p>After confirming that all the information is correct, submit and wait for confirmation on the blockchain.</p>
+</li>
+</ul>
+<h2 id="use-chia-client-to-inscribe"><a class="header" href="#use-chia-client-to-inscribe">Use Chia Client to inscribe</a></h2>
 <ul>
-<li>Inscription: The content of the inscription. Please note to not include spaces, such as: <code>{'p':'xchs','op':'mint','tick':'xchs','amt':'1000'}</code></li>
+<li>Please prepare your Chia client and ensure that you have at least 1 mojo(which is 0.000000000001XCH) in your balance.</li>
+<li>On the send interface, enter your own address, input any amount of XCH (at least 0.000000000001XCH), as well as the network fee (which can be 0).</li>
+<li>Click on 'Add transaction memo', and type the following content like this(You can modify the content of 'tick' and 'amt' as needed):
+<ul>
+<li><code>{'p':'xchs','op':'mint','tick':'xchs','amt':'1000'}</code></li>
 </ul>
 </li>
+<li>After checking all the above information for accuracy, click 'Send' to submit this transaction and wait for block confirmation.
+<img src="4.png" alt="image" /></li>
 </ul>
 
                     </main>
 
                     <nav class="nav-wrapper" aria-label="Page navigation">
                         <!-- Mobile navigation buttons -->
-                            <a rel="prev" href="../how/inscribe.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                            <a rel="prev" href="../how/index.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
                                 <i class="fa fa-angle-left"></i>
                             </a>
-                            <a rel="next" href="../ops/deploy.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                            <a rel="next" href="../ops/index.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
                                 <i class="fa fa-angle-right"></i>
                             </a>
                         <div style="clear: both"></div>
@@ -162,10 +188,10 @@
             </div>
 
             <nav class="nav-wide-wrapper" aria-label="Page navigation">
-                    <a rel="prev" href="../how/inscribe.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                    <a rel="prev" href="../how/index.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
                         <i class="fa fa-angle-left"></i>
                     </a>
-                    <a rel="next" href="../ops/deploy.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                    <a rel="next" href="../ops/index.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
                         <i class="fa fa-angle-right"></i>
                     </a>
             </nav>
