@@ -16,7 +16,7 @@
 - After confirming that all the information is correct, submit and wait for confirmation on the blockchain.
 
 ## Use Chia Client to inscribe
-- Please prepare your Chia client and ensure that you have at least 1 mojo(which is 0.000000000001XCH) in your balance.
+- Please prepare your [Chia client](https://www.chia.net/downloads/) and ensure that you have at least 1 mojo(which is 0.000000000001XCH) in your balance.
 - On the send interface, enter your own address, input any amount of XCH (at least 0.000000000001XCH), as well as the network fee (which can be 0).
 - Click on 'Add transaction memo', and type the following content like this(You can modify the content of 'tick' and 'amt' as needed):
   -  ` {'p':'xchs','op':'mint','tick':'xchs','amt':'1000'} `
