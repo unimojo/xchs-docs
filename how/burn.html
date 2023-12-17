@@ -3,7 +3,7 @@
     <head>
         <!-- Book generated using mdBook -->
         <meta charset="UTF-8">
-        <title>Transfer - XCHS White Paper</title>
+        <title>How to &#x27;Burn&#x27; It - XCHS White Paper</title>
         <!-- Custom HTML head -->
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
         <meta name="description" content="">
@@ -75,7 +75,7 @@
 
         <nav id="sidebar" class="sidebar" aria-label="Table of contents">
             <div class="sidebar-scrollbox">
-                <ol class="chapter"><li class="chapter-item expanded "><a href="../intro.html"><strong aria-hidden="true">1.</strong> Introduction</a></li><li class="chapter-item expanded "><a href="../how/index.html"><strong aria-hidden="true">2.</strong> How It Works</a></li><li class="chapter-item expanded "><a href="../how/inscribe.html"><strong aria-hidden="true">3.</strong> How to Inscribe</a></li><li class="chapter-item expanded "><a href="../how/burn.html"><strong aria-hidden="true">4.</strong> How to 'Burn' It</a></li><li class="chapter-item expanded "><a href="../ops/index.html"><strong aria-hidden="true">5.</strong> Operations</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../ops/deploy.html"><strong aria-hidden="true">5.1.</strong> Deploy</a></li><li class="chapter-item expanded "><a href="../ops/mint.html"><strong aria-hidden="true">5.2.</strong> Mint</a></li><li class="chapter-item expanded "><a href="../ops/transfer.html" class="active"><strong aria-hidden="true">5.3.</strong> Transfer</a></li><li class="spacer"></li></ol></li><li class="chapter-item expanded "><a href="../misc/about.html"><strong aria-hidden="true">6.</strong> About Us</a></li></ol>
+                <ol class="chapter"><li class="chapter-item expanded "><a href="../intro.html"><strong aria-hidden="true">1.</strong> Introduction</a></li><li class="chapter-item expanded "><a href="../how/index.html"><strong aria-hidden="true">2.</strong> How It Works</a></li><li class="chapter-item expanded "><a href="../how/inscribe.html"><strong aria-hidden="true">3.</strong> How to Inscribe</a></li><li class="chapter-item expanded "><a href="../how/burn.html" class="active"><strong aria-hidden="true">4.</strong> How to 'Burn' It</a></li><li class="chapter-item expanded "><a href="../ops/index.html"><strong aria-hidden="true">5.</strong> Operations</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../ops/deploy.html"><strong aria-hidden="true">5.1.</strong> Deploy</a></li><li class="chapter-item expanded "><a href="../ops/mint.html"><strong aria-hidden="true">5.2.</strong> Mint</a></li><li class="chapter-item expanded "><a href="../ops/transfer.html"><strong aria-hidden="true">5.3.</strong> Transfer</a></li><li class="spacer"></li></ol></li><li class="chapter-item expanded "><a href="../misc/about.html"><strong aria-hidden="true">6.</strong> About Us</a></li></ol>
             </div>
             <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
         </nav>
@@ -134,32 +134,53 @@
 
                 <div id="content" class="content">
                     <main>
-                        <h1 id="transfer"><a class="header" href="#transfer">Transfer</a></h1>
-<p>Attention, some wallet implementation generate a different address each time. Make sure to send to the address that holds the balance.</p>
-<pre><code class="language-js">{
-  'p': 'xchs',
-  'op': 'transfer',
-  'tick': 'xchs',
-  'amt': '100'
-}
-</code></pre>
-<div class="table-wrapper"><table><thead><tr><th>Key</th><th>Required?</th><th>Description</th></tr></thead><tbody>
-<tr><td>p</td><td>Yes</td><td>Protocol: Helps other systems identify and process XCHS events.</td></tr>
-<tr><td>op</td><td>Yes</td><td>Operation: Type of event (Deploy, Mint, Transfer).</td></tr>
-<tr><td>tick</td><td>Yes</td><td>Ticker: 4 letter identifier of the XCHS.</td></tr>
-<tr><td>amt</td><td>Yes</td><td>Amount to transfer: amount of the XCHS to transfer. *</td></tr>
-</tbody></table>
-</div>
-<p>*Amount: if the amount is exceeding account balance, then this transfer is invalid.</p>
+                        <h1 id="how-to-burn-it"><a class="header" href="#how-to-burn-it">How to 'Burn' It</a></h1>
+<p>Certainly you won't want to burn it, so here is the guide how you might burn it and try to avoid them.</p>
+<ul>
+<li><code>transfer</code> XCHS funds to CAT address.
+<ul>
+<li>It's burned, and lost forever.</li>
+<li>Someone might get used to copy addresses from blockchain explorer, but please never copy the CAT address.</li>
+</ul>
+</li>
+<li><code>transfer</code> XCHS funds to random central exchange.
+<ul>
+<li>It depends, it might be dangerous.</li>
+<li>Until safe exchange protocol like offer or DEX is introduced, trading without any trust could prove perilous.</li>
+</ul>
+</li>
+</ul>
+<h1 id="safe-scenarios"><a class="header" href="#safe-scenarios">Safe Scenarios</a></h1>
+<p>Here listed some safe scenarios:</p>
+<ul>
+<li>Moving all XCH out of the account address.
+<ul>
+<li>🛡️ It's safe.</li>
+<li>You might need move some XCH back into this account to extract out these XCHS funds later.</li>
+</ul>
+</li>
+<li>Inscribing a wrong inscription.
+<ul>
+<li>🛡️ It's safe.</li>
+<li>The catch is, this could end up being ineffective.</li>
+</ul>
+</li>
+<li>Inscribing the <code>deploy</code> more than once or after someone already deployed the same tick.
+<ul>
+<li>🛡️ It's safe.</li>
+<li>But the later one have no impact. The limit or supply won't change since the very first deploy.</li>
+</ul>
+</li>
+</ul>
 
                     </main>
 
                     <nav class="nav-wrapper" aria-label="Page navigation">
                         <!-- Mobile navigation buttons -->
-                            <a rel="prev" href="../ops/mint.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                            <a rel="prev" href="../how/inscribe.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
                                 <i class="fa fa-angle-left"></i>
                             </a>
-                            <a rel="next" href="../misc/about.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                            <a rel="next" href="../ops/index.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
                                 <i class="fa fa-angle-right"></i>
                             </a>
                         <div style="clear: both"></div>
@@ -168,10 +189,10 @@
             </div>
 
             <nav class="nav-wide-wrapper" aria-label="Page navigation">
-                    <a rel="prev" href="../ops/mint.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                    <a rel="prev" href="../how/inscribe.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
                         <i class="fa fa-angle-left"></i>
                     </a>
-                    <a rel="next" href="../misc/about.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                    <a rel="next" href="../ops/index.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
                         <i class="fa fa-angle-right"></i>
                     </a>
             </nav>

@@ -76,7 +76,7 @@
 
         <nav id="sidebar" class="sidebar" aria-label="Table of contents">
             <div class="sidebar-scrollbox">
-                <ol class="chapter"><li class="chapter-item expanded "><a href="intro.html"><strong aria-hidden="true">1.</strong> Introduction</a></li><li class="chapter-item expanded "><a href="how/index.html"><strong aria-hidden="true">2.</strong> How It Works</a></li><li class="chapter-item expanded "><a href="how/inscribe.html"><strong aria-hidden="true">3.</strong> How to Inscribe</a></li><li class="chapter-item expanded "><a href="ops/index.html"><strong aria-hidden="true">4.</strong> Operations</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="ops/deploy.html"><strong aria-hidden="true">4.1.</strong> Deploy</a></li><li class="chapter-item expanded "><a href="ops/mint.html"><strong aria-hidden="true">4.2.</strong> Mint</a></li><li class="chapter-item expanded "><a href="ops/transfer.html"><strong aria-hidden="true">4.3.</strong> Transfer</a></li><li class="spacer"></li></ol></li><li class="chapter-item expanded "><a href="misc/about.html"><strong aria-hidden="true">5.</strong> About Us</a></li></ol>
+                <ol class="chapter"><li class="chapter-item expanded "><a href="intro.html"><strong aria-hidden="true">1.</strong> Introduction</a></li><li class="chapter-item expanded "><a href="how/index.html"><strong aria-hidden="true">2.</strong> How It Works</a></li><li class="chapter-item expanded "><a href="how/inscribe.html"><strong aria-hidden="true">3.</strong> How to Inscribe</a></li><li class="chapter-item expanded "><a href="how/burn.html"><strong aria-hidden="true">4.</strong> How to 'Burn' It</a></li><li class="chapter-item expanded "><a href="ops/index.html"><strong aria-hidden="true">5.</strong> Operations</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="ops/deploy.html"><strong aria-hidden="true">5.1.</strong> Deploy</a></li><li class="chapter-item expanded "><a href="ops/mint.html"><strong aria-hidden="true">5.2.</strong> Mint</a></li><li class="chapter-item expanded "><a href="ops/transfer.html"><strong aria-hidden="true">5.3.</strong> Transfer</a></li><li class="spacer"></li></ol></li><li class="chapter-item expanded "><a href="misc/about.html"><strong aria-hidden="true">6.</strong> About Us</a></li></ol>
             </div>
             <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
         </nav>
@@ -144,37 +144,33 @@
 <li><strong>Immutable:</strong> The core mission of XCHS is to foster decentralization, democratization, and fairness. It enables ordinary users to participate at nearly zero cost.</li>
 <li><strong>Infinite Expansion:</strong> XCHS offers a more economical alternative to Non-Fungible Tokens (NFTs) in the Chia ecosystem. In the future, it also aims to present an economic alternative to the handling of complex and difficult Chialisp smart coins, thereby broadening opportunities for all users within the Chia blockchain.</li>
 </ul>
-<h2 id="roadmap"><a class="header" href="#roadmap">Roadmap</a></h2>
-<h3 id="q1-2024"><a class="header" href="#q1-2024">Q1 2024</a></h3>
-<h4 id="market-establishment"><a class="header" href="#market-establishment">Market Establishment</a></h4>
-<p>Launch a decentralized XCHS market, offering a secure environment with high liquidity for digital asset trading under the XCHS protocol.</p>
-<h4 id="protocol-expansion-and-support"><a class="header" href="#protocol-expansion-and-support">Protocol Expansion and Support</a></h4>
-<p>Extend the protocol to fully accommodate a broader range of Chia inscription assets, thereby stimulating diversity and encouraging continued development within the ecosystem.</p>
-<h4 id="api-release"><a class="header" href="#api-release">API Release:</a></h4>
-<p>Offer the XCHS protocol API to facilitate easy and straightforward integration with third-party applications.</p>
-<h3 id="q2-2024"><a class="header" href="#q2-2024">Q2 2024</a></h3>
-<h4 id="xchs-protocol-token-split"><a class="header" href="#xchs-protocol-token-split">XCHS Protocol Token Split:</a></h4>
-<p>The XCHS protocol token will be split to simplify the process for users to operate and manage their assets.</p>
-<h4 id="token-swap"><a class="header" href="#token-swap">Token Swap</a></h4>
-<p>Enable direct trading of split tokens via swaps, improving the efficiency and ease of token exchanges.</p>
-<h3 id="in-the-future"><a class="header" href="#in-the-future">In the future</a></h3>
-<h4 id="inscription-nft-arrival"><a class="header" href="#inscription-nft-arrival">Inscription NFT Arrival</a></h4>
-<p>Support will be provided for the creation of Chia NFTs in inscription form, eliminating the need for the often complicated NFT minting process.</p>
-<h4 id="market-upgrade"><a class="header" href="#market-upgrade">Market Upgrade</a></h4>
-<p>Updates to market operations will accommodate the expanded inscription tokens and inscription NFTs, offering more transaction possibilities to users.</p>
+<h2 id="comparison"><a class="header" href="#comparison">Comparison</a></h2>
+<div class="table-wrapper"><table><thead><tr><th></th><th>Low Fee</th><th>Smart Contract</th><th>Account Model</th></tr></thead><tbody>
+<tr><td>BTC</td><td>❌</td><td>❌</td><td>❌</td></tr>
+<tr><td>BRC-20</td><td>❌</td><td>✅</td><td>❌</td></tr>
+<tr><td>ETH</td><td>❌</td><td>✅</td><td>✅</td></tr>
+<tr><td>ETHS</td><td>✅</td><td>✅</td><td>✅</td></tr>
+<tr><td>XCH</td><td>✅</td><td>✅</td><td>❌</td></tr>
+<tr><td>XCHS</td><td>✅</td><td>✅</td><td>✅</td></tr>
+</tbody></table>
+</div>
+<p>It's easy to discover that BRC-20 revolutionizes BTC by integrating smart contracts, while ETHS augments Ethereum with low fees. Given that XCH already boasts of low fees and superior Chialisp (smart contract). But it is still complicated for DEX to achieve high throughput due to the absence of an Account Model. However, the implementation of an Account Model in XCHS will truly make DeFi more captivating in XCH, like never before.</p>
+<h2 id="xsip-xchs-improvement-proposal"><a class="header" href="#xsip-xchs-improvement-proposal">XSIP (XCHS Improvement Proposal)</a></h2>
+<p>All upcoming features will be implemented following the XSIP process, and no explicit roadmap is planned to be provided.</p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="how-it-works"><a class="header" href="#how-it-works">How It Works</a></h1>
 <ul>
 <li>Only standard XCH addresses are valid receiving addresses. If you send to other types of addresses, they will not be recognized and will ultimately lead to losses.</li>
 <li>XCHS may not be compatible with current trading infrastructure, please use with caution.</li>
 <li>Although XCH is also based on the UTXO model like Bitcoin, there are some differences in detail. I won't go into detail here, but please note that the working methods with BRC-20 will be somewhat different.</li>
-<li>XCHS does not need to specially mint a one-time-use transfer inscription like in BRC-20, you can directly send fund with an inscription to the target address.</li>
+<li>XCHS does not need to specially <code>mint</code> a one-time-use transfer inscription like in BRC-20, you can directly send fund with an inscription to the target address.</li>
 <li>Only the first deployed ticker is effective, subsequent tickers with the same name will be ignored. Note that tickers are case insensitive, but you can write in your preferred style when deploying. The indexer can display this original name as needed.</li>
-<li>If by chance two deployment plaintexts appear in the same block, the first one will be taken as effective.</li>
-<li>The validity of Mint is determined in the same way as deployment, first come first served.</li>
-<li>Only Mint and Transfer will change the balance, while Deploy will not.</li>
-<li>The user who exceeds the maximum value at the first Mint can get the remaining amount. Any Mint that exceeds the maximum value afterwards will be invalid.</li>
+<li>If by chance two <code>deploy</code> inscriptions appear in the same block, the first one will be taken as effective.</li>
+<li>The validity of <code>mint</code> is determined in the same way as deployment, first come first served.</li>
+<li>Only <code>mint</code> and <code>transfer</code> will change the balance, while Deploy will not.</li>
+<li>The user who exceeds the maximum value at the first <code>mint</code> can get the remaining amount. Any <code>mint</code> that exceeds the maximum value afterwards will be invalid.</li>
 <li>XCHS can be completely independent of XCH, that is, an account may not have any XCH but have a balance of XCHS. Furthermore, in wallets that support gasless, you can directly pay gas with XCHS to complete transactions.</li>
 <li>The maximum supply should not exceed the maximum value: 9007199254740991</li>
+<li>When <code>transfer</code> your token in XCHS protocol, be sure to inscibe in the coin with correct sender address. Some wallet client might not properly select the correct coin. Nevertheless, even if the wrong sender address is used, your funds will not be lost; but the operation might be ineffective.</li>
 </ul>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="how-to-inscribe"><a class="header" href="#how-to-inscribe">How to inscribe?</a></h1>
 <h2 id="easy-way--use-pawket-to-inscribe"><a class="header" href="#easy-way--use-pawket-to-inscribe">Easy way : Use Pawket to inscribe</a></h2>
@@ -212,6 +208,44 @@
 </li>
 <li>After checking all the above information for accuracy, click 'Send' to submit this transaction and wait for block confirmation.
 <img src="how/4.png" alt="image" /></li>
+</ul>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="how-to-burn-it"><a class="header" href="#how-to-burn-it">How to 'Burn' It</a></h1>
+<p>Certainly you won't want to burn it, so here is the guide how you might burn it and try to avoid them.</p>
+<ul>
+<li><code>transfer</code> XCHS funds to CAT address.
+<ul>
+<li>It's burned, and lost forever.</li>
+<li>Someone might get used to copy addresses from blockchain explorer, but please never copy the CAT address.</li>
+</ul>
+</li>
+<li><code>transfer</code> XCHS funds to random central exchange.
+<ul>
+<li>It depends, it might be dangerous.</li>
+<li>Until safe exchange protocol like offer or DEX is introduced, trading without any trust could prove perilous.</li>
+</ul>
+</li>
+</ul>
+<h1 id="safe-scenarios"><a class="header" href="#safe-scenarios">Safe Scenarios</a></h1>
+<p>Here listed some safe scenarios:</p>
+<ul>
+<li>Moving all XCH out of the account address.
+<ul>
+<li>🛡️ It's safe.</li>
+<li>You might need move some XCH back into this account to extract out these XCHS funds later.</li>
+</ul>
+</li>
+<li>Inscribing a wrong inscription.
+<ul>
+<li>🛡️ It's safe.</li>
+<li>The catch is, this could end up being ineffective.</li>
+</ul>
+</li>
+<li>Inscribing the <code>deploy</code> more than once or after someone already deployed the same tick.
+<ul>
+<li>🛡️ It's safe.</li>
+<li>But the later one have no impact. The limit or supply won't change since the very first deploy.</li>
+</ul>
+</li>
 </ul>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="protocol"><a class="header" href="#protocol">Protocol</a></h1>
 <ul>
