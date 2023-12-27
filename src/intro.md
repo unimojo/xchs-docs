@@ -24,4 +24,4 @@ It's easy to discover that BRC-20 revolutionizes BTC by integrating smart contra
 
 ## XSIP (XCHS Improvement Proposal)
 
-All upcoming features will be implemented following the XSIP process, and no explicit roadmap is planned to be provided.
+All upcoming features will be implemented following the [XSIP](./xsip/index.md) process, and no explicit roadmap is planned to be provided.
