@@ -12,6 +12,7 @@
     - [XSIP-1: XCHS Improvement Proposal](./xsip/xsip-1-proposal.md)
     - [XSIP-2: Decentralized Indexer](./xsip/xsip-2-indexer.md)
     - [XSIP-3: Flexible Smart Contract](./xsip/xsip-3-smart-contract.md)
+    - [XSIP-4: Exchange by Offer](./xsip/xsip-4-exchange-by-offer.md)
 --------------
 
 - [About Us](./misc/about.md)
