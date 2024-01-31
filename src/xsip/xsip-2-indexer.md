@@ -28,9 +28,11 @@ From a technical view, the Inscription Chain will utilize Chia's Reward Chain to
 | InfusionBlockHeight | UInt64    | Indication of the height of the Chia reward chain from the genesis block.               |
 | WorldStateRoot      | UInt256   | Hash representing the state of the blockchain after applying transactions in the block. |
 | TransactionRoot     | UInt256   | Root hash of the tree containing all transactions included in the block.                |
+| CoinRoot            | UInt256   | Root hash of the tree containing all spent coins included in the block.                 |
 
-- TransactionRoot: Merkle Tree (binary tree) Root with SHA256 Hash
 - WorldStateRoot: Patricia Merkle Tree (hex tree) Root with SHA256 Hash
+- TransactionRoot: Merkle Tree (binary tree) Root with SHA256 Hash
+- CoinRoot: Merkle Tree (binary tree) Root with SHA256 Hash
 
 ## Rationale
 
