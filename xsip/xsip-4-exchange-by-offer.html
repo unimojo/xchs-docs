@@ -1,0 +1,259 @@
+<!DOCTYPE HTML>
+<html lang="en" class="sidebar-visible no-js light">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>XSIP-4: Exchange by Offer - XCHS White Paper</title>
+        <!-- Custom HTML head -->
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff" />
+
+        <link rel="icon" href="../favicon.svg">
+        <link rel="shortcut icon" href="../favicon.png">
+        <link rel="stylesheet" href="../css/variables.css">
+        <link rel="stylesheet" href="../css/general.css">
+        <link rel="stylesheet" href="../css/chrome.css">
+        <link rel="stylesheet" href="../css/print.css" media="print">
+        <!-- Fonts -->
+        <link rel="stylesheet" href="../FontAwesome/css/font-awesome.css">
+        <link rel="stylesheet" href="../fonts/fonts.css">
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="../highlight.css">
+        <link rel="stylesheet" href="../tomorrow-night.css">
+        <link rel="stylesheet" href="../ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+    </head>
+    <body>
+        <!-- Provide site root to javascript -->
+        <script type="text/javascript">
+            var path_to_root = "../";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "light";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script type="text/javascript">
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script type="text/javascript">
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            var html = document.querySelector('html');
+            html.classList.remove('no-js')
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add('js');
+        </script>
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script type="text/javascript">
+            var html = document.querySelector('html');
+            var sidebar = 'hidden';
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            }
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <div class="sidebar-scrollbox">
+                <ol class="chapter"><li class="chapter-item expanded "><a href="../intro.html"><strong aria-hidden="true">1.</strong> Introduction</a></li><li class="chapter-item expanded "><a href="../how/index.html"><strong aria-hidden="true">2.</strong> How It Works</a></li><li class="chapter-item expanded "><a href="../how/inscribe.html"><strong aria-hidden="true">3.</strong> How to Inscribe</a></li><li class="chapter-item expanded "><a href="../how/burn.html"><strong aria-hidden="true">4.</strong> How to 'Burn' It</a></li><li class="chapter-item expanded "><a href="../ops/index.html"><strong aria-hidden="true">5.</strong> Operations</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../ops/deploy.html"><strong aria-hidden="true">5.1.</strong> Deploy</a></li><li class="chapter-item expanded "><a href="../ops/mint.html"><strong aria-hidden="true">5.2.</strong> Mint</a></li><li class="chapter-item expanded "><a href="../ops/transfer.html"><strong aria-hidden="true">5.3.</strong> Transfer</a></li></ol></li><li class="chapter-item expanded "><a href="../xsip/index.html"><strong aria-hidden="true">6.</strong> XSIP</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../xsip/xsip-1-proposal.html"><strong aria-hidden="true">6.1.</strong> XSIP-1: XCHS Improvement Proposal</a></li><li class="chapter-item expanded "><a href="../xsip/xsip-2-indexer.html"><strong aria-hidden="true">6.2.</strong> XSIP-2: Decentralized Indexer</a></li><li class="chapter-item expanded "><a href="../xsip/xsip-3-smart-contract.html"><strong aria-hidden="true">6.3.</strong> XSIP-3: Flexible Smart Contract</a></li><li class="chapter-item expanded "><a href="../xsip/xsip-4-exchange-by-offer.html" class="active"><strong aria-hidden="true">6.4.</strong> XSIP-4: Exchange by Offer</a></li><li class="spacer"></li></ol></li><li class="chapter-item expanded "><a href="../misc/about.html"><strong aria-hidden="true">7.</strong> About Us</a></li></ol>
+            </div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky bordered">
+                    <div class="left-buttons">
+                        <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </button>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light (default)</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title">XCHS White Paper</h1>
+
+                    <div class="right-buttons">
+                        <a href="../print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script type="text/javascript">
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <h1 id="xsip-4-exchange-by-offer"><a class="header" href="#xsip-4-exchange-by-offer">XSIP-4: Exchange by Offer</a></h1>
+<p><strong>WIP</strong></p>
+<h2 id="abstract"><a class="header" href="#abstract">Abstract</a></h2>
+<p>This proposal seeks to redefine and fine-tune Offer with new primitives that enhance both security and operability.
+Offer permits decentralized trading of assets directly, utilizing a mechanism reminiscent of BRC20's design.
+However, it can lead to irrevocable financial loss if implemented incorrectly, especially when interacted with incompatible wallets.
+To address these issues, we propose three primitives: 'Inscribe', 'Transmit', and 'Reclaim'.
+'Inscribe' is to bind a certain amount of funds to a created UTXO coin from the sender's balance. Once inscribed, the funds can only be moved using this specific coin.
+'Transmit' offers the exclusive method of transmitting inscribed funds out of UTXO.
+If improper construction occurs, funds can only be reclaimed through a 'Reclaim' operation.
+This XSIP aims to maximize Offer's potential, mitigate the risk of loss, and increase users' control over their funds by providing the ability to rectify mistakes and reclaim lost funds.</p>
+<h2 id="motivation"><a class="header" href="#motivation">Motivation</a></h2>
+<p>Offer is a unique feature provided by Chia, allowing direct asset trades with others in a decentralized manner. For instance, we can put forth an offer inviting someone to trade their Chia for our new token, which then can be accepted by any party.</p>
+<p>When it comes to inscription trading within the context of offers, security is achieved by binding a specific amount of inscription tokens to one UTXO coin. In essence, the inscription token can be transferred only when the UTXO coin is spent. This design ethos is reminiscent of the BRC20 protocol. However, the BRC20 protocol reveals a significant shortcoming: if the spending is improperly constructed, such as by an incompatible wallet, the funds may be irretrievably lost.</p>
+<p>Therefore, within this XSIP, we propose defining two primitives, reminiscent of BRC20's two-stage transfer. Importantly, we introduce an additional primitive to reclaim funds that may be lost due to incorrectly structured spent coins. In doing so, we aim to not just rectify existing issues but also to introduce new levels of flexibility and security to XCHS.</p>
+<h2 id="specification"><a class="header" href="#specification">Specification</a></h2>
+<p>Note: The fields <code>p</code>, <code>op</code>, <code>tick</code> will follow the definitions set by the base protocol and will not be further detailed herein.</p>
+<h3 id="inscribe"><a class="header" href="#inscribe">Inscribe</a></h3>
+<p>The 'Inscribe' operation entails allocating a specific amount of funds from the sender's balance to a created UTXO coin.
+Following inscription, the fund amount will be relocated from a particular account to this UTXO coin, and subsequent operations to transmit these funds can only utilize this coin.</p>
+<pre><code class="language-js">{
+  'p': 'xchs',
+  'op': 'inscribe',
+  'tick': 'xchs',
+  'amt': '1000'
+}
+</code></pre>
+<div class="table-wrapper"><table><thead><tr><th>Key</th><th>Required?</th><th>Description</th></tr></thead><tbody>
+<tr><td>amt</td><td>Yes</td><td>Amount to inscribe: Amount of the XCHS to inscribe to target coin</td></tr>
+</tbody></table>
+</div>
+<h3 id="transmit"><a class="header" href="#transmit">Transmit</a></h3>
+<p>'Transmit' signifies the exclusive method to extract funds from the inscribed UTXO coin.
+If an inscription instruction is incorrectly constructed and the coin is spent, the <code>reclaim</code> operation stands as the sole avenue to retrieve your funds.</p>
+<pre><code class="language-js">{
+  'p': 'xchs',
+  'op': 'transmit',
+  'tick': 'xchs'
+}
+</code></pre>
+<h3 id="reclaim"><a class="header" href="#reclaim">Reclaim</a></h3>
+<p>'Reclaim' operation aids in recovering your funds if the inscribed coin is spent without the correct inscription instruction.
+Although this operation is heavy, it ensures the safety of your funds from unsophisticated wallet software execution.</p>
+<pre><code class="language-js">{
+  'p': 'xchs',
+  'op': 'reclaim',
+  'tick': 'xchs',
+  'coin': 'fca28aa50c89aaa5f7dc40b7f94e1635d070c9f83be52a2f2be0bf9bf8617285',
+  'height': '4700101',
+  'idx': '456',
+  'path': [
+    'e98be068d742b009af509f807d1b6a00a36b73a88aeb074ab40750eb66101aa0',
+    '60c20d176b7901447a618e5269c69402a5b5d09e4a7ec7402ff568f2138ee46e',
+    '60b9bcaca73d68f3288b9aeec079b165d744bc636e71caa1e8ea1003dbeeee6d',
+    '02055edbd965f9d49fd95e1822249a9efdb6d9ff4c1e1c71d428656193577b77',
+    '5857bd486c4bdcc437a73f77c2245db81da518197d4d0c2cc5f0965ad22c6635'
+  ]
+}
+</code></pre>
+<div class="table-wrapper"><table><thead><tr><th>Key</th><th>Required?</th><th>Description</th></tr></thead><tbody>
+<tr><td>coin</td><td>Yes</td><td>the coin which is spent and still hold inscribed funds</td></tr>
+<tr><td>height</td><td>Yes</td><td>the block height where the spent coin is located</td></tr>
+<tr><td>idx</td><td>Yes</td><td>the index of the spent coin within the merkle tree</td></tr>
+<tr><td>path</td><td>Yes</td><td>the path to prove the coin's inclusion within the merkle tree</td></tr>
+</tbody></table>
+</div>
+<h2 id="rationale"><a class="header" href="#rationale">Rationale</a></h2>
+<h3 id="transfer-vs-inscribe"><a class="header" href="#transfer-vs-inscribe">Transfer vs Inscribe</a></h3>
+<p>Within the BRC20 protocol, users are required to execute a 'transfer' twice.
+Initially, they transfer to their account in preparation, followed by a genuine transfer to a specific recipient.
+XCHS circumvents this double-transfer necessity by using the account model, but the downside is that peer-to-peer trading, like Offer mechanism, cannot exclusively guarantee successful trading.
+Thus, the two-stage 'transfer' is still a requirement.
+However, XCHS has endowed 'transfer' with the notion of a straightforward fund transfer, which is why we've designed this XSIP with a two-stage 'transfer', embodied in the <code>inscribe</code> and <code>transmit</code> operations.</p>
+<h2 id="security-considerations"><a class="header" href="#security-considerations">Security Considerations</a></h2>
+<h3 id="offer"><a class="header" href="#offer">Offer</a></h3>
+<p>Offer is a mechanism provided by the Chia Network, designed to ensure a trade only occurs when both parties requirements are satisfied. To ensure this mechanism's seamless operation with XCHS, under the account model, we propose this XSIP to secure the inscription's binding to a specific coin.</p>
+<h3 id="funds-loss"><a class="header" href="#funds-loss">Funds loss</a></h3>
+<p>In BRC20, fund losses occasionally occur, especially when an incompatible wallet is handling these funds.
+Users were expected to absorb these losses with no chance to reclaim them.
+This vulnerability led to the design of the reclaim operation.
+The reclaim operation equips users with a tool to address such situations and guard against unnecessary losses.</p>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                            <a rel="prev" href="../xsip/xsip-3-smart-contract.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+                            <a rel="next" href="../misc/about.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                    <a rel="prev" href="../xsip/xsip-3-smart-contract.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+                    <a rel="next" href="../misc/about.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+            </nav>
+
+        </div>
+
+        <script type="text/javascript">
+            window.playground_copyable = true;
+        </script>
+        <script src="../elasticlunr.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../mark.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../searcher.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../clipboard.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../highlight.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../book.js" type="text/javascript" charset="utf-8"></script>
+
+        <!-- Custom JS scripts -->
+        <script type="text/javascript" src="../mermaid.min.js"></script>
+        <script type="text/javascript" src="../mermaid-init.js"></script>
+    </body>
+</html>
