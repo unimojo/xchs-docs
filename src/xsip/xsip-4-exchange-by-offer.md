@@ -4,8 +4,8 @@
 
 ## Abstract
 
-This proposal seeks to redefine and fine-tune Offer with new primitives that enhance both security and operability.
-Offer permits decentralized trading of assets directly, utilizing a mechanism reminiscent of BRC20's design.
+This proposal seeks to redefine and fine-tune XCHS with new primitives that enhance both security and operability for inscription trading.
+This proposal integrates two existing mechanisms: the Offer mechanism from the Chia Network, which enables direct decentralized trading of assets, and the two-stage 'transfer' mechanism from BRC20.
 However, it can lead to irrevocable financial loss if implemented incorrectly, especially when interacted with incompatible wallets.
 To address these issues, we propose three primitives: 'Inscribe', 'Transmit', and 'Reclaim'.
 'Inscribe' is to bind a certain amount of funds to a created UTXO coin from the sender's balance. Once inscribed, the funds can only be moved using this specific coin.
