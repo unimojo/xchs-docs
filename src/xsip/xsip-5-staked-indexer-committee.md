@@ -1,6 +1,6 @@
 # XSIP-5: Staked Indexer Committee
 
-**WIP**
+**DRAFT**
 
 ## Abstract
 

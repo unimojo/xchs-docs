@@ -1,6 +1,6 @@
 # XSIP-3: Flexible Smart Contract
 
-**WIP**
+**DRAFT**
 
 ## Abstract
 
