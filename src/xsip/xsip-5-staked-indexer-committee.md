@@ -22,46 +22,83 @@ That is to say, a mechanism dedicated to facilitating consensus among off-chain 
 
 ### Committee
 
-Committee is comprised of multiple parsing entities, whether using same code base for generating inscription chain or not, they should reach consensus along the main chain.
+The Committee is comprised of multiple parsing entities. Whether or not they use the same codebase for generating the inscription chain, they should reach consensus along the main chain.
 
-As XSIP-2 already implemented the software to generating the inscription chain blocks.
-What committee member need to do, is just keep the block producer running and the software should report to each other about their latest status.
+With XSIP-2 already implementing the software for generating inscription chain blocks, what Committee members need to do is to keep the block producer running. The software should then report each member's latest status to each other.
 
-The software also would vote for slash if it deem one member is mal-operation.   
+Moreover, if the software deems a member is in mal-operation, it would vote for a slash of that member.
 
-As you may imagine, to join the committee, certain amount of staked funds is necessary, and would be slashed when mal-operation for a period of time. Also, incentive should be generated for every success block generated.
+As one may imagine, to join the committee, a certain amount of staked funds is required, which would be slashed if mal-operation continues for a period of time. Also, incentives should be provided for every successfully generated block.
 
 ### Operations
 
+We designed the operation protocol with universality in mind.
+Where we place the operations can be determined later, with considerations being found in the Rationale section.
+
+#### Join
+
+Ask to join the block producer network with certain amount to stake and its public key registered.
+
+```js
+{
+  'p': 'xchs',
+  'op': 'join',
+  'amt': '1000000',
+  'pubkey': 'b976ead8b3fe50d6813d6073cc161fc020f399fc7789e55c0da944ad8b5d04da418159e5dc40e492258baf2ca5123278'
+}
+```
+
+| Key | Required? | Description                                                       |
+| --- | --------- | ----------------------------------------------------------------- |
+| amt | Yes       |  |
+| pubkey | Yes       | BLS public key |
+
 #### Report
 
+Report the hash at specific height by the block producer.
 
 ```js
 {
   'p': 'xchs',
   'op': 'report',
-  'tick': 'xchs'
+  'height': '4800000',
+  'hash': '02055edbd965f9d49fd95e1822249a9efdb6d9ff4c1e1c71d428656193577b77'
 }
 ```
 
-#### Vote
+| Key | Required? | Description                                                       |
+| --- | --------- | ----------------------------------------------------------------- |
+| height | Yes       | report height  |
+| hash | Yes       | report hash of specific height |
 
+#### Vote-Slash
+
+Vote to slash certain block producer with public key in ripemd160 encoding, accuse it mal-behavior at specific height, with signature from block producer.
 
 ```js
 {
   'p': 'xchs',
-  'op': 'vote',
-  'tick': 'xchs'
+  'op': 'slash',
+  'height': '4801234',
+  'pubkey': 'ec206ed55d2c47843d2defaba41e869a8572897e',
+  'sig': '998899f4edfef5a4a44874c862bd841ce7bd60c97b741a3c0d8243e95a05479e319a94a8fe65b7e3f9384e06b135192f14db7a03bb78929db3105482b54551025b592f81cb7d2535c7ce5e6b1a442feaf7e0da197c829cc34bdb2655af65b32a'
 }
 ```
 
+| Key | Required? | Description                                                       |
+| --- | --------- | ----------------------------------------------------------------- |
+| height | Yes       | height that is mal-behavior  |
+| pubkey | Yes       | the pubkey in ripemd160 encoding which is mal-behavior |
+| sig | Yes       | the signature provided who is accusing other is mal-behavior |
+
 ### Incentive
 
-The detail of incentive is out of scope of this proposal, and subject to change according to circumstance at that time.
+The specifics of incentives are beyond the scope of this proposal and are subject to change according to the circumstances that prevail at that time.
 
-But to make the incentive to work, a special token would be issued that support unlimited minting, while only allow minting when a block successful generated and included in the chain.
+However, to make the incentive system work, a special token would be issued. This token would support unlimited minting, but only allow minting when a block is successfully generated and included in the chain.
 
 ## Rationale
 
+### Operations: Main Chain vs Inscription Chain vs Off-chain
 
 ## Security Considerations
